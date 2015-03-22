@@ -53,6 +53,13 @@ html{font:1.25em/1.5 TimesNewRoman,"Times New Roman",Times,Baskerville,Georgia,s
 	InstantClick.init();
 
 	addTypo();
+
+	// mobile hack
+
+	addEventListener("load", function() {
+	    window.scrollTo(1, 1);
+	}, false);
+
 	InstantClick.on('change', addTypo);
 
 	function addTypo () {
