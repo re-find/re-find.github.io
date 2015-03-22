@@ -38,17 +38,17 @@ html{font:1.25em/1.5 TimesNewRoman,"Times New Roman",Times,Baskerville,Georgia,s
 
 <script src="/js/instantclick.min.js" data-no-instant></script>
 <script data-no-instant>
-	addTypo();
 	InstantClick.init();
+
+	addTypo();
 	InstantClick.on('change', addTypo);
 
 	function addTypo () {
-		if (document.querySelector('.slaquo, .sbrace')) return;
+		if (document.querySelector('.slaquo, .sbrace') == null) return;
 
 		function forEachElement(selector, fn) {
-		  var elements = document.querySelectorAll(selector);
-		  for (var i = 0; i < elements.length; i++)
-		    fn(elements[i], i);
+			var elements = document.querySelectorAll(selector);
+			for (var i = 0; i < elements.length; i++) fn(elements[i], i);
 		}
 
 		forEachElement('body *:not(script):not(style)', function(el, i){
