@@ -1,3 +1,15 @@
 <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
 
-<script type="text/javascript" src="/js/code.js"></script>
+<script src="/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>
+	addTypo();
+	InstantClick.init();
+	InstantClick.on('change', addTypo);
+
+	function addTypo () {
+		console.log('Typo');
+		var el = document.getElementsByTagName('body')[0];
+		el.innerHTML = el.innerHTML.replace(/«/g, '<span class="slaquo"> </span> <span class="hlaquo"> «</span>')
+		el.innerHTML = el.innerHTML.replace(/\(/g, '<span class="sbrace"> </span> <span class="hbrace"> (</span>')
+	}
+</script>
