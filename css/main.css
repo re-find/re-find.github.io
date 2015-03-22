@@ -131,6 +131,7 @@ h6:hover .short-link {
 	.posts li:before { position: static }
 }
 
+#instantclick-bar { background: #008ACE }
 
 abbr[title]{border-bottom:1px dotted}
 dfn{font-style:italic}
